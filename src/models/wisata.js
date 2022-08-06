@@ -1,4 +1,4 @@
-const {pool:db}  = require('./../databases/config');
+const {pool:db}  = require('../databases/config');
 
 const getListWisata = ()=>{
     return new Promise((resolve,reject)=>{
