@@ -5,6 +5,8 @@ const { devNull } = require('os');
 const getListWisata = () => {
     return new Promise((resolve, reject) => {
         db.query(`select * from tb_wisata_belanja`, (err, result) => {
+            console.log("data result ")
+            console.log(result)
             if (err) reject(err);
             resolve({ success: 200, data: result });
         })
