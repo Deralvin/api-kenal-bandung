@@ -2,11 +2,27 @@ const { pool: db } = require('../databases/config');
 const fs = require("fs");
 const { parse } = require("csv-parse");
 const { devNull } = require('os');
+const NodeGeocoder = require('node-geocoder');
+
+const options = {
+  provider: 'google',
+
+  // Optional depending on the providers
+//   fetch: customFetchImplementation,
+//   apiKey: 'YOUR_API_KEY', // for Mapquest, OpenCage, Google Premier
+//   formatter: null // 'gpx', 'string', ...
+};
+
+const geocoder = NodeGeocoder(options);
+
+// Using callback
+const resultdata = await geocoder.geocode('29 champs elysée paris');
+
 const getListWisata = () => {
     return new Promise((resolve, reject) => {
         db.query(`select * from tb_wisata_belanja`, (err, result) => {
             console.log("data result ")
-            console.log(result)
+            console.log(resultdata)
             if (err) reject(err);
             resolve({ success: 200, data: result });
         })
