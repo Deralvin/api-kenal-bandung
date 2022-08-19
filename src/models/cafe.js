@@ -23,7 +23,6 @@ const storeDataFromWorker = () => {
         const longitude = ternarylon?.trim() || "";
 
 
-
         db.query("INSERT INTO tb_cafe (nama,alamat,latitude,longitude) VALUES ($1,$2,$3,$4)", [nama,alamat,latitude,longitude],(err,result)=>{
             if (err) reject(err);
             console.log(result)
