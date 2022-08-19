@@ -4,19 +4,19 @@ const { parse } = require("csv-parse");
 const { devNull } = require('os');
 const NodeGeocoder = require('node-geocoder');
 
-const options = {
-  provider: 'google',
+// const options = {
+//   provider: 'google',
 
-  // Optional depending on the providers
-//   fetch: customFetchImplementation,
-//   apiKey: 'YOUR_API_KEY', // for Mapquest, OpenCage, Google Premier
-//   formatter: null // 'gpx', 'string', ...
-};
+//   // Optional depending on the providers
+// //   fetch: customFetchImplementation,
+// //   apiKey: 'YOUR_API_KEY', // for Mapquest, OpenCage, Google Premier
+// //   formatter: null // 'gpx', 'string', ...
+// };
 
-const geocoder = NodeGeocoder(options);
+// const geocoder = NodeGeocoder(options);
 
-// Using callback
-const resultdata = await geocoder.geocode('29 champs elysée paris');
+// // Using callback
+// const resultdata = await geocoder.geocode('29 champs elysée paris');
 
 const getListWisata = () => {
     return new Promise((resolve, reject) => {
